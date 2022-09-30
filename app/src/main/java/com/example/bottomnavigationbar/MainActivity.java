@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
     @SuppressLint("NonConstantResourceId")
-    public boolean onItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.person:
@@ -44,10 +44,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     void loadFragment(Fragment fragment) {
         //to attach fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).commit();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
     }
 }
